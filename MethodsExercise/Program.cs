@@ -7,7 +7,7 @@ namespace MethodsExercise
 {
     public class Program
     {
-        // Function to capitalize the first charater of a word
+        // Function to capitalize the first character of a word
         public static string CapitalizeFirstChar(string str)
         {
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
