@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Drawing;
+using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
 
 namespace MethodsExercise
@@ -10,35 +11,42 @@ namespace MethodsExercise
         {
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
         }
-        static void Main(string[] args)
+
+        // Function to describe an animal
+        public static void AnimalDescription()
         {
             // Declaration of variables
-            string nameOfAnimal;
-            string typeOfAnimal;
-            string habitat;
-            string region;
-            string color;
+            string animalName;
+            string animalType;
+            string animalHabitat;
+            string animalRegion;
+            string animalColor;
 
             // User Input
             Console.WriteLine("Name one animal in plural:");
-            nameOfAnimal = Console.ReadLine();
+            animalName = Console.ReadLine();
 
             Console.WriteLine("Name the type of animal, such as birds, dogs, or insects:");
-            typeOfAnimal = Console.ReadLine();
-            
+            animalType = Console.ReadLine();
+
             Console.WriteLine("Name the habitat, such as tropical, subtropical, or rainforest:");
-            habitat = Console.ReadLine();
-            
+            animalHabitat = Console.ReadLine();
+
             Console.WriteLine("Name one region where there is the greatest diversity, such as South America, North America, or Australia:");
-            region = Console.ReadLine();
+            animalRegion = Console.ReadLine();
 
             Console.WriteLine("Name one color of the animal:");
-            color = Console.ReadLine();
+            animalColor = Console.ReadLine();
 
             // User input in string interpolation
-            Console.WriteLine($"\n{CapitalizeFirstChar(nameOfAnimal)} are {typeOfAnimal}. They are found in most {habitat} regions. The greatest diversity of {nameOfAnimal} is found in {CapitalizeFirstChar(region)}. Many species of {nameOfAnimal} has {color} color. ");
-
-
+            Console.WriteLine($"\n{CapitalizeFirstChar(animalName)} are {animalType}. They are found in most {animalHabitat} regions. The greatest diversity of {animalName} is found in {CapitalizeFirstChar(animalRegion)}. Many species of {animalName} has {animalColor} color. ");
+        }
+        static void Main(string[] args)
+        {
+            // Execute a function
+            // Example of output:
+            // Parrots are birds. They are found in most tropical regions. The greatest diversity of parrots is found in South America. Many species of parrots has green color.
+            AnimalDescription();
         }
     }
 }
